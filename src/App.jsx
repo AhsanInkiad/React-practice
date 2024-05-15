@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Todo from './Todo'
 import Singer from './Singer'
+import Count from './Count'
 
 function App() {
 
@@ -30,6 +31,8 @@ function App() {
 
       <button onClick={handleClick}> Click Me </button>
       <button onClick={() => addFive(3)}>Cick to add 5</button>
+
+      <Count></Count>
 
 
       {/* {
