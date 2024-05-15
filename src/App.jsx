@@ -10,19 +10,34 @@ function App() {
   // name ="Laptop" eita hocche property (props), eita amra pathailam. 
   // Eta object akare recieve hobe. {name: 'Laptop', price: 55}
   const singers = [
-    {id:1, name: 'Akib', age: 24}, 
-    {id:2, name: 'Amid', age: 28}, 
-    {id:3, name: 'Fiat', age: 35}
+    { id: 1, name: 'Akib', age: 24 },
+    { id: 2, name: 'Amid', age: 28 },
+    { id: 3, name: 'Fiat', age: 35 }
   ];
+
+  // event handling
+  function handleClick() {
+    alert('button clicked');
+  }
+
+  const addFive = (num) => {
+    alert(num + 5);
+  }
 
   return (
     <>
       <h1>Vite + React</h1>
-    {
+
+      <button onClick={handleClick}> Click Me </button>
+      <button onClick={() => addFive(3)}>Cick to add 5</button>
+
+
+      {/* {
       singers.map(singer => <Singer singer={singer}></Singer>)
-    }
+    } */}
 
 
+      {/* 
       <Todo
         task="Learn React"
         isDone={true}>
@@ -36,7 +51,7 @@ function App() {
       <Todo
         task="Try JSX"
         isDone={false}>
-      </Todo>
+      </Todo> */}
 
       {/* <Person></Person>
       <Student grade="7" score="90"></Student>

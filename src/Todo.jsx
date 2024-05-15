@@ -11,9 +11,9 @@ export default function Todo({ task, isDone }) {
     // return <li>Work on: {task}</li>
 
     // way-2
-    // return (
-    //     <li>{isDone ? 'Finished' : 'Work on it'} : {task}</li>
-    // )
+    return (
+        <li>{isDone ? 'Finished' : 'Work on it'} : {task}</li>
+    )
 
 
 }
