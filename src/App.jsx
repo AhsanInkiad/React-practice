@@ -3,16 +3,26 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Todo from './Todo'
+import Singer from './Singer'
 
 function App() {
 
   // name ="Laptop" eita hocche property (props), eita amra pathailam. 
   // Eta object akare recieve hobe. {name: 'Laptop', price: 55}
-
+  const singers = [
+    {id:1, name: 'Akib', age: 24}, 
+    {id:2, name: 'Amid', age: 28}, 
+    {id:3, name: 'Fiat', age: 35}
+  ];
 
   return (
     <>
       <h1>Vite + React</h1>
+    {
+      singers.map(singer => <Singer singer={singer}></Singer>)
+    }
+
+
       <Todo
         task="Learn React"
         isDone={true}>
