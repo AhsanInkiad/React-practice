@@ -5,14 +5,17 @@ import './App.css'
 
 function App() {
   
+// name ="Laptop" eita hocche property (props), eita amra pathailam. 
+// Eta object akare recieve hobe. {name: 'Laptop', price: 55}
+
 
   return (
     <>
       <h1>Vite + React</h1>
       <Person></Person>
-      <Person></Person>
-      <Student></Student>
+      <Student grade="7" score="90"></Student>
       <Developer></Developer>
+      <Device name="Laptop" price="55"></Device>  
     </>
   )
 }
@@ -22,12 +25,13 @@ function Person(){
   return <h3>I am a person and my age is: {age}</h3>
 }
 
-function Student(){
+function Student(props){
+  const {grade, score} = props; // Destrucutring korlam
   return (
     <div className='student'>
       <h3>This is a student.</h3>
-      <p>Name:</p>
-      <p>Age:</p>
+      <p>Grade: {grade}</p>
+      <p>Score: {score}</p>
     </div>
   )
 }
@@ -36,13 +40,20 @@ function Developer(){
   const styles = {
     margin: '20px',
     padding: '20px',
-    border: '2px solid purple'
+    border: '2px solid purple',
+    borderRadius: '20px' // used camel case while writing borderRadius.
   }
   return (
-    <div>
+    <div style={styles}>
       <h5>Devo Devs</h5>
       <p>Coding:</p>
     </div>
   )
+}
+
+function Device(props){
+  // return e giye props recieve korlam. Ebhabe chara arekbhabe kora jai
+  // Destructuring kore. Destructuring kore Student component e korlam.
+  return <h2>This device: {props.name} Price: {props.price}  </h2>
 }
 export default App
