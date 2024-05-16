@@ -6,6 +6,7 @@ import Todo from './Todo'
 import Singer from './Singer'
 import Count from './Count'
 import Team from './Team'
+import Users from './Users'
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
 
       <Count></Count>
       <Team></Team>
+      <Users></Users>
 
       {/* {
       singers.map(singer => <Singer singer={singer}></Singer>)
