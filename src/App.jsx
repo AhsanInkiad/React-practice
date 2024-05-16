@@ -5,6 +5,7 @@ import './App.css'
 import Todo from './Todo'
 import Singer from './Singer'
 import Count from './Count'
+import Team from './Team'
 
 function App() {
 
@@ -33,7 +34,7 @@ function App() {
       <button onClick={() => addFive(3)}>Cick to add 5</button>
 
       <Count></Count>
-
+      <Team></Team>
 
       {/* {
       singers.map(singer => <Singer singer={singer}></Singer>)
