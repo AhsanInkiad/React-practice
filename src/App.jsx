@@ -7,6 +7,7 @@ import Singer from './Singer'
 import Count from './Count'
 import Team from './Team'
 import Users from './Users'
+import Friends from './Friends'
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
       <Count></Count>
       <Team></Team>
       <Users></Users>
+      <Friends></Friends>
 
       {/* {
       singers.map(singer => <Singer singer={singer}></Singer>)
