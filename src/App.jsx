@@ -8,6 +8,7 @@ import Count from './Count'
 import Team from './Team'
 import Users from './Users'
 import Friends from './Friends'
+import Countries from './components/Countries/Countries'
 
 function App() {
 
@@ -38,7 +39,8 @@ function App() {
       <Count></Count>
       <Team></Team>
       <Users></Users>
-      <Friends></Friends>
+      {/* <Friends></Friends> */}
+      <Countries></Countries>
 
       {/* {
       singers.map(singer => <Singer singer={singer}></Singer>)
