@@ -1,0 +1,70 @@
+Understanding the differences between state and props in React is crucial for any React developer, especially when preparing for an interview. Here's a detailed comparison and some key points you should know:
+
+### **Props (Properties)**
+- **Definition**: Props are inputs to a React component. They are used to pass data and event handlers down to child components from parent components.
+- **Immutability**: Props are immutable, meaning they cannot be changed by the child component receiving them.
+- **Usage**: Props are mainly used to communicate between components. They allow parent components to pass data and configuration to their children.
+- **Access**: Props are accessed via `this.props` in class components and directly as function parameters in functional components.
+- **Example**:
+
+  ```javascript
+  // Parent component
+  function ParentComponent() {
+      const data = "Hello from Parent!";
+      return <ChildComponent message={data} />;
+  }
+
+  // Child component
+  function ChildComponent(props) {
+      return <p>{props.message}</p>;
+  }
+  ```
+
+### **State**
+- **Definition**: State is a built-in object that allows components to create and manage their own data.
+- **Mutability**: State is mutable, meaning it can be changed. Changes to state trigger a re-render of the component.
+- **Usage**: State is used for data that needs to be tracked and updated over time, like form inputs, user interactions, or fetched data.
+- **Access and Update**: In class components, state is accessed via `this.state` and updated via `this.setState()`. In functional components, the `useState` hook is used.
+- **Example**:
+
+  ```javascript
+  // Functional component with state using useState hook
+  import React, { useState } from 'react';
+
+  function Counter() {
+      const [count, setCount] = useState(0);
+
+      return (
+          <div>
+              <p>Count: {count}</p>
+              <button onClick={() => setCount(count + 1)}>Increment</button>
+          </div>
+      );
+  }
+  ```
+
+### **State vs Props**
+- **Ownership**: State is owned and managed by the component itself, while props are passed to the component by its parent.
+- **Mutability**: State is mutable and can change over time, while props are immutable and should not be changed by the receiving component.
+- **Usage**: Use state for data that the component itself controls and will need to change. Use props to pass data and event handlers down the component tree.
+- **Lifecycle**: Props are set by the parent and are fixed throughout the component's lifecycle unless the parent re-renders and passes new props. State can change and trigger re-renders at any point in the component's lifecycle.
+
+### **Key Points for Interviews**
+1. **Understand the Basics**: Clearly explain what props and state are, their differences, and their roles in a React application.
+2. **Props and Immutability**: Emphasize that props are immutable and used for passing data from parent to child components.
+3. **State and Mutability**: Highlight that state is mutable and used for data that can change over time within a component.
+4. **State Management**: Be familiar with managing state using `useState` and `useReducer` hooks in functional components, and `this.state` and `this.setState` in class components.
+5. **Lifecycle Methods**: Know how state interacts with component lifecycle methods (e.g., `componentDidMount`, `componentDidUpdate`).
+6. **Best Practices**: Discuss best practices for lifting state up, prop drilling, and using context to manage global state.
+7. **Examples and Use Cases**: Be prepared to give examples of when to use state vs props in real-world scenarios.
+
+### **Common Interview Questions**
+1. **What are props in React and how are they used?**
+2. **What is state in React and how is it different from props?**
+3. **How do you update state in a React component?**
+4. **Can you pass state from one component to another? If so, how?**
+5. **What are some common patterns for managing state in larger React applications?**
+6. **Explain the concept of "lifting state up" in React.**
+7. **How do hooks like `useState` and `useReducer` differ in managing state?**
+
+Understanding these concepts thoroughly will help you not only answer questions about state and props but also demonstrate your overall grasp of React component architecture and data flow during an interview.
